@@ -1,0 +1,21 @@
+l = [2, 6, 3, 2, 8, 5, 2, 7, 9, 3, 6,]
+
+def is_prime(n):
+    for i in range(2, n//2+1):
+        if n%i==0:
+            return False
+    return True
+def is_neutral(n):
+    return n in [0, 1]
+min_l = max(l)
+max_l = min(l)
+for i in l:
+     if is_neutral(i):
+         continue
+     is_pr = is_prime(i)
+     if is_pr and i< min_l:
+        min_l = i
+     elif not is_pr and i>max_l:
+         max_l = i
+print(min_l)
+print(max_l)
